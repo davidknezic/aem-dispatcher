@@ -14,8 +14,9 @@ RUN tar -C dispatcher -zxvf dispatcher-apache2.4-linux-x86-64-ssl10-4.1.11.tar.g
 RUN ls ./dispatcher
 
 # Copy Dispatcher
-RUN cp "./dispatcher/dispatcher-apache2.4-4.1.11.so" "/etc/httpd/modules/dispatcher-apache2.4-4.1.11.so"
-RUN ln -s /etc/httpd/modules/dispatcher-apache2.4-4.1.11.so /etc/httpd/modules/mod_dispatcher.so
+#RUN cp "./dispatcher/dispatcher-apache2.4-4.1.11.so" "/etc/httpd/modules/dispatcher-apache2.4-4.1.11.so"
+RUN cp "./dispatcher/dispatcher-apache2.4-4.1.11.so" "/etc/httpd/modules/mod_dispatcher.so"
+#RUN ln -s /etc/httpd/modules/dispatcher-apache2.4-4.1.11.so /etc/httpd/modules/mod_dispatcher.so
 
 # Add config files
 ADD /httpd.conf /etc/httpd/conf/httpd.conf
