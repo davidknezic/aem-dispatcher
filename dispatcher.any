@@ -33,9 +33,10 @@
       /rend01
         {
         # Hostname or IP of the render
-        /hostname "aem61-publisher-f5b24ce0.rlaxach.svc.tutum.io"
+        #/hostname "aem61-publisher-f5b24ce0.rlaxach.svc.tutum.io"
+        /hostname "${PUBLISH_HOSTNAME}"
         # Port of the render
-        /port "4503"
+        /port "${PUBLISH_PORT}"
         # Connect timeout in milliseconds, 0 to wait indefinitely
         # /timeout "0"
         }
