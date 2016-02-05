@@ -6,7 +6,7 @@ MAINTAINER ggotti
 RUN yum install -y --enablerepo=centosplus libselinux-devel
 #RUN yum list available httpd --showduplicates
 RUN yum install -y --enablerepo=centosplus httpd-2.2.15
-RUN yum install -y tar 
+RUN yum install -y tar
 
 # Download the Dispatcher
 #RUN wget https://www.adobeaemcloud.com/content/companies/public/adobe/dispatcher/dispatcher/_jcr_content/top/download_12/file.res/dispatcher-apache2.4-linux-x86-64-ssl10-4.1.11.tar.gz
@@ -34,5 +34,7 @@ ADD /dispatcher.any /etc/httpd/conf/dispatcher.any
 
 CMD ["-D", "FOREGROUND"]
 ENTRYPOINT ["/usr/sbin/httpd"]
+
+VOLUME ["/etc/httpd/conf/certs"]
 
 EXPOSE 80 443
